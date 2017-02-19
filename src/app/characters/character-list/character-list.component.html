@@ -1,9 +1,15 @@
  <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0">
-    <ngb-panel *ngFor="let character of characters" title="{{character.name}}">
+    <ngb-panel *ngFor="let character of characters | async" title="{{character.name}}" >
       <template ngbPanelContent>
          <pre>{{character | json}}</pre>
          <a href="#" [routerLink]="['/characters', character.id ]" >info</a>
+
+        <button type="button" (click)="showSelected(character)" class="btn btn-default" >
+          click me
+        </button>
       </template>
     </ngb-panel>
 
   </ngb-accordion>
+
+  <ngb-alert type="success" [dismissible]="true">You select: {{selectedCharacterName || 'none'}}</ngb-alert>
