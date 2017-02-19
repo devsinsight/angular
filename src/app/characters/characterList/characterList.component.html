@@ -1,0 +1,9 @@
+ <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0">
+    <ngb-panel *ngFor="let character of characters" title="{{character.name}}">
+      <template ngbPanelContent>
+         <pre>{{character | json}}</pre>
+         <a href="#" [routerLink]="['/characters', character.id ]" >info</a>
+      </template>
+    </ngb-panel>
+
+  </ngb-accordion>
