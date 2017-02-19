@@ -11,7 +11,7 @@ export class CharactersService {
     }
 
     getCharacterById(id:number){
-
+        
         
 
     }
