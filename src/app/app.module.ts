@@ -4,23 +4,25 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppComponent } from './app.component';
-import { AppRouterModule, routableComponents } from './app-router/app-router.module';
-import { HomeComponent } from './home/home.component';
+import { AppRouterModule, routableComponents } from './app-router.module';
+import { CharactersModule } from './characters/characters.module'
+import { CommonService } from './core/services/common.service';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    routableComponents,
-    HomeComponent
+    routableComponents
 ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     NgbModule.forRoot(),
-    AppRouterModule
+    AppRouterModule,
+    CharactersModule
   ],
-  providers: [],
+  providers: [CommonService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

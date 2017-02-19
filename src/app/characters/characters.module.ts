@@ -1,18 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CharactersComponent } from './characters.component';
-import { CharacterComponent } from './character/character.component';
-import { CharacterListComponent } from './CharacterList/CharacterList.component';
-import { CharacterListComponent } from './characterList/characterList.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { CharacterRouterModule, routableComponents } from './character-router.module'
+import { CharactersService } from './characters.service';
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    NgbModule,
+    CharacterRouterModule
   ],
-  declarations: [CharactersComponent,
-    CharacterComponent,
-    CharacterListComponent,
-    CharacterListComponent
-]
+  declarations: [routableComponents],
+  providers:[CharactersService]
 })
 export class CharactersModule { }
