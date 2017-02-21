@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { CharacterRouterModule, routableComponents } from './character-router.module'
-import { CharactersService } from './characters.service';
+import { CharactersRouting, routableComponents } from './characters.routing'
+import { CharactersService } from './shared/characters.service';
 
 @NgModule({
   imports: [
     CommonModule,
     NgbModule,
-    CharacterRouterModule
+    CharactersRouting
   ],
   declarations: [routableComponents],
   providers:[CharactersService]

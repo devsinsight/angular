@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { CharactersService } from '../characters.service';
+import { CharactersService } from '../shared/characters.service';
 import { Observable } from 'rxjs/Observable';
-export class Character {
-  constructor(id: number, name: string, info: string) { }
-}
+import { Character } from '../shared/character.model';
 
 @Component({
   selector: 'app-character-list',
@@ -11,21 +9,18 @@ export class Character {
   styleUrls: ['./character-list.component.css']
 })
 export class CharacterListComponent implements OnInit {
+
   characters: Observable<Character[]>;
   selectedCharacterName: string;
+
   constructor(private charactersService: CharactersService) { }
 
   ngOnInit() {
     this.characters = this.charactersService.getCharacters();
-      
-
   }
 
-  showSelected(character) {
-    
-
-    this.selectedCharacterName = character.name;
-
+  showSelected(animeName:string) {
+    this.selectedCharacterName = animeName;
   }
 
 }

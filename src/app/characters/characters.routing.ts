@@ -5,9 +5,9 @@ import { CharactersComponent } from './characters.component';
 import { CharacterComponent } from './character/character.component';
 import { CharacterListComponent } from './character-list/character-list.component';
 
-const router: Routes = [
+const routes: Routes = [
   {
-    path: 'characters', component: CharactersComponent,
+    path: '', component: CharactersComponent,
     children: [
       { path: '', component: CharacterListComponent },
       { path: ':id', component: CharacterComponent }
@@ -19,8 +19,8 @@ const router: Routes = [
 
 
 @NgModule({
-  imports: [RouterModule.forChild(router)],
+  imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class CharacterRouterModule { }
+export class CharactersRouting { }
 export const routableComponents = [CharactersComponent, CharacterComponent, CharacterListComponent]

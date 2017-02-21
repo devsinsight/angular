@@ -9,7 +9,7 @@ export class CommonService {
 
     get(url: string, params?: RequestOptionsArgs) {
         return this.http
-            .get(url,params )
+            .get(url,params)
             .map((response: Response) => response.json())
             .catch(this.handleError);
     }

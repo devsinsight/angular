@@ -4,24 +4,21 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppComponent } from './app.component';
-import { AppRouterModule, routableComponents } from './app-router.module';
-import { CharactersModule } from './characters/characters.module'
+import { AppRouting, routableComponents } from './app.routing';
 import { CommonService } from './core/services/common.service';
 import './rxjs-extensions';
-
 
 @NgModule({
   declarations: [
     AppComponent,
     routableComponents
-  ],
+],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     NgbModule.forRoot(),
-    AppRouterModule,
-    CharactersModule
+    AppRouting
   ],
   providers: [CommonService],
   bootstrap: [AppComponent]
